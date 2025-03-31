@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 전체 페이지 중앙 배치 */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        /* 중앙 컨테이너 스타일 */
+        #container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        /* 로고 스타일 */
+        #logo-container {
+            margin-bottom: 40px;
+            font-weight: bold;
+            font-size: 30px;
+            color: #333;
+        }
+
+        /* 입력 박스 스타일 */
+        .content {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-label {
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .input-style {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        /* 버튼 스타일 */
+        .join-button {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .join-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <!-- 로고 레이아웃 -->
+        <div id="logo-container">
+            씽어롱타임 노래제출
+        </div>
+
+        <!-- 제출자 이름 입력 -->
+        <div class="content">
+            <div class="input-label">제출자 이름</div>
+            <div class="inline">
+                <input class="input-style" type="text" id="name" />
+            </div>
+        </div>
+
+        <!-- 노래 제목 입력 -->
+        <div class="content">
+            <div class="input-label">제출하는 노래 제목</div>
+            <div class="inline">
+                <input class="input-style" type="text" id="song" />
+            </div>
+        </div>
+
+        <!-- 제출 버튼 -->
+        <div class="content">
+            <div class="inline">
+                <button class="join-button">제출하기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 코드 추가 -->
+    <script>
+        document.querySelector(".join-button").addEventListener("click", function () {
+          const formData = new FormData();
+          formData.append("name", document.querySelector("#name").value);
+          formData.append("song", document.querySelector("#song").value);
+      
+          fetch("https://script.google.com/macros/s/AKfycbx7d0GEDL_YUo0zbBgn4R7dmCJL_lT_dHf0HrrMwS35f37kwen9g9ka8HlDTDyABNUR/exec", {
+            method: "POST",
+            body: formData  // ✅ Content-Type 자동 설정됨 (CORS preflight 발생 안 함)
+          })
+          .then(res => res.text())
+          .then(data => alert(data))
+          .catch(err => {
+            console.error("❌ 제출 실패", err);
+            alert("에러 발생!");
+          });
+        });
+      </script>
+      
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>씽어롱타임 노래 제출</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f0f0f0;
+    }
+    #container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 400px;
+    }
+    .content {
+      margin-bottom: 20px;
+    }
+    .input-label {
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    input[type="text"],
+    input[type="file"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4e15a2;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #4e15a2;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div><h1 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️▫️</h1></div>
+    <div><h1 style="text-align: center;">💜 씽어롱타임 💜</h1></div>
+    <div><h1 style="text-align: center;">🎼 노래 제출 🎤</h1></div>
+    <div><h1 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️▫️</h1></div>
+
+    <form id="uploadForm" 
+          method="POST" 
+          enctype="multipart/form-data" 
+          target="invisibleFrame"
+          action="https://script.google.com/macros/s/AKfycby-zY4-Fi1Yc6pJ_o_XMxxPVdMr7wBNe0mriZP7wZKnVnSyFzBP9uTVG0zYB1qoFj4J/exec"> <!-- ✅ 여기에 Apps Script 웹앱 URL 넣기 -->
+
+      <div class="content">
+        <span class="input-label">✔️ [  제출자 이름 ]</span>
+        <span style="font-size: 12px;">ex) 김현우</span>
+        <input type="text" name="name" required style="margin-top: 8px;" />
+      </div>
+
+      <div class="content">
+        <span class="input-label">✔️ [ 제출할 노래 ]</span>
+        <span style="font-size: 12px;">ex) 가수명 - 곡명</span>
+        <input type="text" name="song" required style="margin-top: 8px;" />
+      </div>
+
+      <div class="content">
+        <span class="input-label">✔️ [ 업로드할 파일 선택 ]</span>
+        <span style="font-size: 12px;">ex) 가수명 - 곡명.mp3</span>
+        <input type="file" name="file" required style="margin-top: 8px;" />
+      </div>
+
+      <button type="submit">제출하기</button>
+    </form>
+
+    <!-- ✅ 숨겨진 iframe -->
+    <iframe name="invisibleFrame" style="display: none;"></iframe>
+  </div>
+</body>
+</html>

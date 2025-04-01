@@ -70,6 +70,31 @@
         .join-button:hover {
             background-color: #4e15a2;
         }
+        
+        .link-wrapper {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .drive-link {
+            display: block;              /* 블록 요소로 변경 */
+            width: fit-content;          /* 내용에 맞는 너비 */
+            margin: 8px auto 20px auto;  /* 수평 중앙 정렬 */
+            color: #4e15a2;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            background-color: #f3ebff;
+            padding: 10px 16px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .drive-link:hover {
+            text-decoration: underline;
+            background-color: #e5d8ff;
+        }
+        
     </style>
 </head>
 
@@ -81,14 +106,45 @@
             <div><h2 style="text-align: center;">💜 씽어롱타임 💜</h2></div>
             <div><h2 style="text-align: center;">🎼 노래 제출 🎤</h2></div>
             <div><h3 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</h3></div>
+        
+            <div class="content" style="font-size: 5px;">
+                <div class="input-label" style="text-align: center; font-size: 15px;" >📢 이 페이지는 버스킹 랜덤곡으로 사용될 노래를 📢</div>
+                <div class="input-label" style="text-align: center; font-size: 15px; margin-bottom: 50px;">📢  각자 익명으로 제출하기 위한 페이지 입니다. 📢</div>
+                
+                <div class="input-label" style="font-size: 20px; text-align: center;">1️⃣</div>
+                <div class="input-label" style="font-size: 15px; text-align: center;"> 제출할 노래의 음원파일을 </div>
+                <div class="input-label" style="font-size: 15px; text-align: center;"> 아래 구글드라이브 폴더 링크에 업로드해주세요.</div>
+                <a
+                    href="https://drive.google.com/drive/folders/1B8vZ1X43mJcSR69QMsC2q0zKUkWhHjNZ?usp=drive_link"
+                    class="drive-link"
+                    target="_blank"
+                >
+                    📁 음원 업로드
+                </a>
+                  
 
+                <div class="input-label" style="font-size: 20px; text-align: center;">2️⃣</div>
+                <div class="input-label" style="font-size: 15px; text-align: center;margin-bottom: 20px;"> 아래 입력란에 이름과 곡명을 입력 후 제출해주세요.</div>
+
+                <div class="input-label" style="font-size: 20px; text-align: center;">3️⃣</div>
+                <div class="input-label" style="font-size: 15px; text-align: center;"> 혹시 이미 제출했지만 잘못 입력하여 </div>
+                <div class="input-label" style="font-size: 15px; text-align: center;"> 수정해야하거나 곡을 바꿔야하는 경우에는</div>
+                <div class="input-label" style="font-size: 15px; margin-bottom: 20px; text-align: center;">수정해서 새로 제출해주시면</div>
+                <div class="input-label" style="font-size: 15px; margin-bottom: 20px; text-align: center; text-decoration: underline;">
+                    ❗❗ 최종적으로 가장 마지막에 제출한 것으로 반영됩니다 ❗❗
+                  </div>
+                  
+                <div class="inline"></div>
+              </div>
+              
+        </div>
 
         <!-- 제출자 이름 입력 -->
         <div class="content">
             <span class="input-label">✔️ [  제출자 이름 ]</span>
             <span style="font-size: 12px;">ex) 김현우</span>
             <div class="inline">
-                <input class="input-style" type="text" id="name" />
+                <input class="input-style" type="text" id="name" required style="margin-top: 8px;"/>
             </div>
         </div>
 
@@ -97,14 +153,15 @@
             <span class="input-label">✔️ [ 제출할 노래 ]</span>
             <span style="font-size: 12px;">ex) 가수명 - 곡명</span>
             <div class="inline">
-                <input class="input-style" type="text" id="song" />
+                <input class="input-style" type="text" id="song" required style="margin-top: 8px;"/>
             </div>
         </div>
+
 
         <!-- 제출 버튼 -->
         <div class="content">
             <div class="inline">
-                <button class="join-button">제출하기</button>
+                <button class="join-button " required style="margin-top: 30px;">제출하기</button>
             </div>
         </div>
     </div>

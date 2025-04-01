@@ -111,11 +111,25 @@
         
             <div class="content" style="font-size: 5px;">
                 <div class="input-label" style="font-size: 20px; text-align: center;">📢‼</div>
-                <div class="input-label" style="text-align: center; font-size: 15px;" >이 페이지는 버스킹 랜덤곡으로 사용될 노래를</div>
+                <div class="input-label" style="text-align: center; font-size: 15px;" >이 페이지는 버스킹 랜덤추첨곡으로 사용될 노래를</div>
                 <div class="input-label" style="text-align: center; font-size: 15px; margin-bottom: 50px;">각자 익명으로 제출하기 위한 페이지 입니다.</div>
                 <div class="input-label" style="font-size: 20px; text-align: center;">1️⃣</div>
                 <div class="input-label" style="font-size: 15px; text-align: center;"> 먼저, 제출할 노래의 음원파일을 </div>
-                <div class="input-label" style="font-size: 15px; text-align: center; margin-bottom: 40px;"> 같이 첨부한 구글드라이브 링크에 업로드해주세요.</div>
+                <div class="input-label" style="font-size: 15px; text-align: center; margin-bottom: 40px;"> 아래에 첨부한 링크를 통해서 업로드해주세요.</div>
+
+                <!-- 구글 드라이브 & DriveUploader 링크 버튼 -->
+            <div style="display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; margin-top: -20px;">
+                <a href="https://driveuploader.com/upload/sUGZOob1Xq/" 
+                target="_blank" 
+                class="drive-link" 
+                style="margin: 0;">음원 업로드하기</a>
+
+                <a href="https://drive.google.com/drive/folders/17QNoEIia11HOwjcbm55MCydPuwu29U5p?usp=drive_link" 
+                target="_blank" 
+                class="drive-link" 
+                style="margin: 0;">음원 확인하기</a>
+            </div>
+
                 <div class="input-label" style="font-size: 20px; text-align: center;">2️⃣</div>
                 <div class="input-label" style="font-size: 15px; text-align: center;margin-bottom: 40px;"> 아래 입력란에 이름과 곡명을 입력 후 제출해주세요.</div>
                 <div class="input-label" style="font-size: 20px; text-align: center;">3️⃣</div>
@@ -143,9 +157,9 @@
             <span style="font-size: 12px;">ex) 가수명 - 곡명</span>
             <div class="inline">
                 <input class="input-style" type="text" id="song" required style="margin-top: 8px;"/>
+                <div style="font-size: 12px; text-align: center; margin-top: 8px;">익명이므로 파일명에 이름 적지마세요!</div>
             </div>
         </div>
-
 
         <!-- 제출 버튼 -->
         <div class="content">
@@ -158,24 +172,34 @@
     <!-- JavaScript 코드 추가 -->
     <script>
         document.querySelector(".join-button").addEventListener("click", function () {
-          const formData = new FormData();
-          formData.append("name", document.querySelector("#name").value);
-          formData.append("song", document.querySelector("#song").value);
-      
-          fetch("https://script.google.com/macros/s/AKfycbx7d0GEDL_YUo0zbBgn4R7dmCJL_lT_dHf0HrrMwS35f37kwen9g9ka8HlDTDyABNUR/exec", {
-            method: "POST",
-            body: formData  // ✅ Content-Type 자동 설정됨 (CORS preflight 발생 안 함)
-          })
-          .then(res => res.text())
-          .then(data => alert(data))
-          .catch(err => {
-            console.error("❌ 제출 실패", err);
-            alert("에러 발생!");
-          });
-        });
-      </script>
-      
+            const name = document.querySelector("#name").value.trim();
+            const song = document.querySelector("#song").value.trim();
 
+            if (!name || !song) {
+                alert("이름과 곡명을 모두 입력해주세요!");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("song", song);
+
+            fetch("https://script.google.com/macros/s/AKfycbwUpCG29Uxg5MEL1w3pnF3I7KyiDwLro_9MXDqiC03woi5FH6NGyySXmCUVcDgl7rSR/exec", {
+                method: "POST",
+                body: formData,
+            })
+            .then(res => res.text())
+            .then(data => {
+                alert(data);
+                document.querySelector("#name").value = "";
+                document.querySelector("#song").value = "";
+            })
+            .catch(err => {
+                console.error("❌ 제출 실패", err);
+                alert("에러 발생! 관리자에게 문의해주세요.");
+            });
+        });
+    </script>   
 </body>
 
 </html>

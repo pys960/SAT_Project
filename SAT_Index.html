@@ -13,7 +13,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             background-color: #f0f0f0;
         }
 
@@ -58,7 +57,7 @@
 
         /* 버튼 스타일 */
         .join-button {
-            background-color: #4CAF50;
+            background-color:  #4e15a2;
             color: white;
             font-size: 16px;
             padding: 10px 20px;
@@ -69,7 +68,7 @@
         }
 
         .join-button:hover {
-            background-color: #45a049;
+            background-color: #4e15a2;
         }
     </style>
 </head>
@@ -78,12 +77,16 @@
     <div id="container">
         <!-- 로고 레이아웃 -->
         <div id="logo-container">
-            씽어롱타임 노래제출
-        </div>
+            <div><h3 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</h3></div>
+            <div><h2 style="text-align: center;">💜 씽어롱타임 💜</h2></div>
+            <div><h2 style="text-align: center;">🎼 노래 제출 🎤</h2></div>
+            <div><h3 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️</h3></div>
+
 
         <!-- 제출자 이름 입력 -->
         <div class="content">
-            <div class="input-label">제출자 이름</div>
+            <span class="input-label">✔️ [  제출자 이름 ]</span>
+            <span style="font-size: 12px;">ex) 김현우</span>
             <div class="inline">
                 <input class="input-style" type="text" id="name" />
             </div>
@@ -91,7 +94,8 @@
 
         <!-- 노래 제목 입력 -->
         <div class="content">
-            <div class="input-label">제출하는 노래 제목</div>
+            <span class="input-label">✔️ [ 제출할 노래 ]</span>
+            <span style="font-size: 12px;">ex) 가수명 - 곡명</span>
             <div class="inline">
                 <input class="input-style" type="text" id="song" />
             </div>

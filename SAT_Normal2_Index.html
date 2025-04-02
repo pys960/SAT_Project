@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+      padding: 40px 10px;
+      box-sizing: border-box;
+    }
+
+    #container {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 450px;
+      text-align: center;
+    }
+
+    #logo-container {
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 30px;
+      color: #333;
+    }
+
+    .content {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .input-label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .input-style {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    .join-button {
+      background-color: #4e15a2;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .join-button:hover {
+      background-color: #4e15a2;
+    }
+
+    .link-wrapper {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .drive-link {
+      display: block;
+      width: fit-content;
+      margin: 8px auto 20px auto;
+      color: #4e15a2;
+      font-weight: bold;
+      font-size: 15px;
+      text-decoration: none;
+      background-color: #f3ebff;
+      padding: 10px 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .drive-link:hover {
+      text-decoration: underline;
+      background-color: #e5d8ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <!-- 로고 레이아웃 -->
+    <div id="logo-container">
+      <div><h1 style="text-align: center;">[ 씽어롱타임 ]</h1></div>
+      <div><h3 style="text-align: center;">🌸4월 청계천 버스킹🌺</h3></div>
+      <div><h4 style="text-align: center;">❓ 노래제출 ❗</h4></div>
+      <div><h3 style="text-align: center;">▫️▫️▫️▫️▫️▫️▫️▫️</h3></div>
+
+      <div class="content" style="font-size: 5px;">
+        <div class="input-label" style="font-size: 20px; text-align: center;">📢‼</div>
+        <div class="input-label" style="text-align: center; font-size: 15px;">이 페이지는 버스킹에 사용될 노래를</div>
+        <div class="input-label" style="text-align: center; font-size: 15px;">각자 제출하기 위한 페이지 입니다.</div>
+        <div class="input-label" style="text-align: center; font-size: 15px; margin-bottom: 50px; text-decoration: underline;">❗❗ (랜덤추첨 컨셉의 랜덤곡 제출 X) ❗❗</div>
+        <div class="input-label" style="font-size: 20px; text-align: center;">1️⃣</div>
+        <div class="input-label" style="font-size: 15px; text-align: center;"> 먼저, 제출할 노래의 음원파일을 </div>
+        <div class="input-label" style="font-size: 15px; text-align: center; margin-bottom: 40px;"> 아래에 첨부한 링크를 통해서 업로드해주세요.</div>
+
+        <!-- 구글 드라이브 & DriveUploader & 제출현황 링크 -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: 40px; margin-top: -20px;">
+          <a href="https://driveuploader.com/upload/jJ03S8DYQQ/" 
+             target="_blank" 
+             class="drive-link">음원 업로드하기</a>
+
+          <a href="https://drive.google.com/drive/folders/17QNoEIia11HOwjcbm55MCydPuwu29U5p?usp=drive_link" 
+             target="_blank" 
+             class="drive-link">음원 확인하기</a>
+
+          <!-- ✅ 제출 현황 링크 추가 -->
+          <a href="https://docs.google.com/spreadsheets/d/1ruV4CL2V78fDBIjFHsG5q_vA0xcHlRBC53HyWLUX6c0/edit#gid=1142026701" 
+             target="_blank" 
+             class="drive-link" 
+             style="background-color: #e7f7e9; color: #1e8e3e;">제출 현황 보기</a>
+        </div>
+
+        <div class="input-label" style="font-size: 20px; text-align: center;">2️⃣</div>
+        <div class="input-label" style="font-size: 15px; text-align: center;margin-bottom: 40px;"> 아래 입력란에 이름과 곡명을 입력 후 제출해주세요.</div>
+        <div class="input-label" style="font-size: 20px; text-align: center;">3️⃣</div>
+        <div class="input-label" style="font-size: 15px; text-align: center;"> 잘못 입력하여 수정해야하거나</div>
+        <div class="input-label" style="font-size: 15px; text-align: center;"> 곡을 바꿔야하는 경우에는</div>
+        <div class="input-label" style="font-size: 15px; margin-bottom: 20px; text-align: center;">수정해서 새로 제출해주시면</div>
+        <div class="input-label" style="font-size: 15px; margin-bottom: 20px; text-align: center; text-decoration: underline;">❗❗ 가장 마지막에 제출한 파일로 반영됩니다 ❗❗</div>
+      </div>
+    </div>
+
+    <!-- 제출자 이름 입력 -->
+    <div class="content">
+      <span class="input-label">✔️ [  제출자 이름 ]</span>
+      <span style="font-size: 12px;">ex) 김현우</span>
+      <div class="inline">
+        <input class="input-style" type="text" id="name" required style="margin-top: 8px;" />
+      </div>
+    </div>
+
+    <!-- 노래 제목 입력 -->
+    <div class="content">
+      <span class="input-label">✔️ [ 제출할 노래 ]</span>
+      <span style="font-size: 12px;">ex) 가수명 - 곡명</span>
+      <div class="inline">
+        <input class="input-style" type="text" id="song" required style="margin-top: 8px;" />
+      </div>
+    </div>
+
+    <!-- 제출 버튼 -->
+    <div class="content">
+      <div class="inline">
+        <button class="join-button" required style="margin-top: 30px;">제출하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.querySelector(".join-button").addEventListener("click", function () {
+      const name = document.querySelector("#name").value.trim();
+      const song = document.querySelector("#song").value.trim();
+
+      if (!name || !song) {
+        alert("이름과 곡명을 모두 입력해주세요!");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("song", song);
+
+      fetch("https://script.google.com/macros/s/AKfycbw8wjInAOs-ox-olweVBNUciBo75jPfC2BD3JxMWxuBp_dVvkvEE0bMwgkyg96hKrYr/exec", {
+        method: "POST",
+        body: formData,
+      })
+        .then(res => res.text())
+        .then(data => {
+          alert(data);
+          document.querySelector("#name").value = "";
+          document.querySelector("#song").value = "";
+        })
+        .catch(err => {
+          console.error("❌ 제출 실패", err);
+          alert("에러 발생! 관리자에게 문의해주세요.");
+        });
+    });
+  </script>
+</body>
+
+</html>

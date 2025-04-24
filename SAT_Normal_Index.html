@@ -122,6 +122,7 @@
       border-radius: 10px;
       max-width: 360px;
       margin: 10px auto 20px auto;
+      border: 2px solid #999;
     }
 
     .step-card .input-label {
@@ -137,7 +138,6 @@
     .input-label.important {
         font-size: 12px;
         text-align: center;
-        text-decoration: underline;
         color: rgb(245, 44, 44);
         font-weight: 700;
     }
@@ -151,75 +151,88 @@
 
     <div id="logo-container">
         <h1 style="margin-bottom: 6px;">🎵씽어롱타임🎶</h1>
-        <h2 style="margin-top: 0; margin-bottom: 35px;">노래 제출 가이드</h2>        
+        <h2 style="margin-top: 0; margin-bottom: 40px;">노래 제출 가이드</h2>        
       </div>
 
     <!-- 안내 카드 -->
-    <h4 style="margin-bottom: 8px;">[ 안내 ]</h4>
-    <div class="step-card" style="margin-bottom: 35px;">
-      <div class="input-label">🌸 4월 버스킹 컨셉 🌺</div>
-      <div class="input-label" style="margin-top: 15px;">[ 봄노래 랜덤곡 1곡 + 개인곡 1곡 ]</div>
-      <div class="input-label" style="margin-top: 15px; font-size: 12px; ">▪ 제출기한 : <span style="color: red;">4월 24일 목요일 오후 11시까지</span></div>
+    <h4 style="margin-bottom: 8px;">🔔 버스킹 안내 🔔</h4>
+
+    <div class="step-card">
+      <div class="input-label" style="margin-top: 5px; margin-bottom: 20px;">🌸 4월 버스킹 컨셉 🌺 </div>
+      <div class="input-label" >[ 봄노래 랜덤곡 1곡 + 개인곡 1곡 ]</div>
+      <div class="input-label" style="margin-top: 20px; font-size: 12px; ">▪ 버스킹 장소 : 청계천 삼일교</div>
+      <div class="input-label" style="font-size: 12px; ">▪ 버스킹 시간 : 18:00 ~ 21:00</div>
+      <div class="input-label" style="margin-bottom: 10px;font-size: 12px; ">▪ MR 제출기한 : <span style="color: red;">4월 24일 목요일 오후 11시까지</span></div>
     </div>
 
+      <!-- 링크 버튼 그룹 -->
+      <h4 style="margin-top: 50px; margin-bottom: 8px;">✅ 제출 전 확인사항 ✅</h4>
+      <div class="step-card" style="margin-bottom: 50px;">
+        <div class="input-label" style="font-size: 12px; margin-top: 10px;">📍 듀엣 시에는 두명 중 한 사람 1슬롯 차감!</div>
+        <div class="input-label" style="font-size: 12px;">📍 다른 사람과 <span style="color: red;">중복곡 없이</span> 제출해 주세요.</div>
+        <div class="input-label" style="font-size: 12px;">📍 <span style="color: red;">수정사항</span>은 <span style="color: red;">수정 후 다시</span> 제출해 주세요.</div>
+        <div class="input-label" style="font-size: 12px; margin-bottom: 20px;">📍 <span style="color: red;">가장 마지막에 제출한 것</span>으로 <span style="color: red;">최종 반영</span>!</div>
+  
+          <div class="link-group">
+              <a href="https://docs.google.com/spreadsheets/d/1ruV4CL2V78fDBIjFHsG5q_vA0xcHlRBC53HyWLUX6c0/edit#gid=1142026701" class="drive-link btn-green" target="_blank">
+              📝 노래 제출 현황
+              </a>
+          </div>
+      </div>
+
+
+
     <!-- 제출 방법 -->
-    <h4 style="margin-bottom: 8px;">[ 제출 방법 ]</h4>
+    <h4 style="margin-bottom: 8px;">🟪 제출 방법 🟪</h4>
+
     <div class="step-card">
       <div class="input-label" style="font-size: 20px;">1️⃣</div>
       <div class="input-label">아래 입력란에</div>
-      <div class="input-label"><span style="color: red;">본인 버스킹곡 2곡</span></div>
-      <div class="input-label"  style="margin-bottom: 10px;"><span style="color: red;">한꺼번에</span> 입력 후 제출</div>
-      
+      <div class="input-label"><span style="color: red;">본인 버스킹곡 2곡</span>을</div>
+      <div class="input-label"  style="margin-bottom: 30px;"><span style="color: red;">한 곡씩 따로</span> 입력 후 제출</div>
 
+    <!-- 제출방법 1. 곡 정보 제출하기 -->
+      <div class="content">
+        <span class="input-label" style="font-weight: bold; color: rgb(152, 3, 226);">▪️ 제출자 이름 </span>
+        <span style="font-size: 11px;"> 닉네임말고 본명으로!! </span>
+        <input class="input-style" type="text" id="name" required style="margin-top: 8px;"/>
+      </div>
+                    
+      <div class="content" style="margin-bottom: 10px;">
+        <span class="input-label" style="font-weight: bold; color: rgb(152, 3, 226);">▪️ 제출할 곡 </span>
+        <span style="font-size: 11px;"> ' 가수명 - 곡명 (초, 중, 후반) '</span>
+        <input class="input-style" type="text" id="song" required style="margin-top: 8px;"/>
+      </div>
+                    
+      <div class="content" style="margin-bottom: 10px;">
+        <button class="join-button" required >곡 정보 제출하기</button>
+        <div class="input-label.important" style="margin-top: 7px; text-align: center; font-weight: bold;"><span style="color: red;">한번만 클릭하셔도 정상제출 됩니다!</span></div>
+      </div>  
     </div>
 
+    <!-- 제출방법 2. 음원 업로드하하기 -->
     <div class="step-card">
       <div class="input-label" style="font-size: 20px;">2️⃣</div>
       <div class="input-label">아래 링크를 통해</div>
       <div class="input-label"><span style="color: red;">음원 파일도 2곡</span></div>
       <div class="input-label">선택 후 업로드</div>
-      <div class="input-label" style="font-size: 12px; margin-bottom: 10px;">( 파일 제목 형식 : ' 가수명 - 곡명 ' )</div>      
-    </div>
+      <div class="input-label" style="font-size: 12px; margin-bottom: 20px;">( 파일 제목 형식 : ' 가수명 - 곡명 ' )</div>      
 
-      <!-- 링크 버튼 그룹 -->
-    <div class="step-card" style="margin-bottom: 25px;">
-      <div class="input-label" style="font-size: 15px; margin-bottom: 12px; font-weight: bold; color: red;">🚨🚨🚨</div>
-      <div class="input-label" style="font-size: 12px;">📍 다른 사람과 <span style="color: red;">중복곡 없이</span> 제출해 주세요.</div>
-      <div class="input-label" style="font-size: 12px;">📍 <span style="color: red;">수정사항</span>은 <span style="color: red;">수정 후 다시</span> 제출해 주세요.</div>
-      <div class="input-label" style="font-size: 12px; margin-bottom: 18px;">📍 <span style="color: red;">가장 마지막에 제출한 것</span>으로 <span style="color: red;">최종 반영</span>!</div>
-
-        <div class="link-group">
-            <a href="https://docs.google.com/spreadsheets/d/1ruV4CL2V78fDBIjFHsG5q_vA0xcHlRBC53HyWLUX6c0/edit#gid=1142026701" class="drive-link btn-green" target="_blank">
-            📝 노래 제출 현황
-            </a>
-            <a href="https://driveuploader.com/upload/ZHij97EJY7/" class="drive-link btn-blue" target="_blank">
+      <div class="link-group">
+        <a href="https://driveuploader.com/upload/ZHij97EJY7/" class="drive-link btn-blue" target="_blank">
             📤 음원 파일 업로드
-            </a>
-            <a href="https://drive.google.com/drive/folders/17QNoEIia11HOwjcbm55MCydPuwu29U5p?usp=drive_link" class="drive-link btn-purple" target="_blank">
+        </a>
+
+        <a href="https://drive.google.com/drive/folders/17QNoEIia11HOwjcbm55MCydPuwu29U5p?usp=drive_link" class="drive-link btn-purple" target="_blank">
             🔊 음원 파일 확인
-            </a>
-        </div>
-    </div>
+        </a>
 
-    <!-- 제출 입력 폼 -->
-    <div class="content">
-      <span class="input-label" style="font-weight: bold; color: blue;">✅ 제출자 이름 </span>
-      <span style="font-size: 11px;"> 닉네임말고 본명으로!! </span>
-      <input class="input-style" type="text" id="name" required style="margin-top: 8px;"/>
+      </div>
     </div>
+</div>
 
-    <div class="content">
-      <span class="input-label" style="font-weight: bold; color: blue;">✅ 제출할 노래 </span>
-      <span style="font-size: 11px;"> ' 가수명 - 곡명 / 가수명 - 곡명 '</span>
-      <input class="input-style" type="text" id="song" required style="margin-top: 8px;"/>
-    </div>
 
-    <div class="content">
-      <button class="join-button" required>제출하기</button>
-      <div class="input-label" style="margin-top: 7px; margin-bottom: 10px; font-weight: bold; font-size: 12px; "><span style="color: red;">한번만 클릭하셔도 정상제출 됩니다!</span></div>
-    </div>
-  </div>
-
+    <!-- Script-->
   <script>
     document.querySelector(".join-button").addEventListener("click", function () {
       const name = document.querySelector("#name").value.trim();
